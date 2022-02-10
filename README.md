@@ -29,9 +29,11 @@ Evaluation_G-CCA.py: It evaluates the image retrieval performance of G-CCA. It n
 
 Evaluation_S-CCA.py: It evaluates the image retrieval performance of S-CCA. It needs matching and non-matching coefficients "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", and canoncial vectors "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py" from training set as inputs. "Eva_NameList.npy" is also needed to generating the retrieval results in txt format.
 
-"gnd_oxford5k.mat","gnd_paris6k.mat","gnd_roxford5k.mat","gnd_rparis6k.mat": Mat files for calculating Map.
-
-test_Map.m: It tests the Map based on the retrieval results in txt format. "gnd_oxford5k.mat","gnd_paris6k.mat","gnd_roxford5k.mat","gnd_rparis6k.mat" are used in this file.
+gnd_oxford5k.mat, gnd_paris6k.mat, gnd_roxford5k.mat, gnd_rparis6k.mat: Mat files for calculating Map.
 
 score_ap_from_ranks.m: This file calculates the average precision for each query image.
+
+test_Map.m: It tests the Map based on the retrieval results in txt format. "gnd_oxford5k.mat","gnd_paris6k.mat","gnd_roxford5k.mat","gnd_rparis6k.mat", and "score_ap_from_ranks.m" are used in this file.
+
+
 
