@@ -7,4 +7,4 @@ Test_Data_preparation.py: For feature extraction on training dataset, it saves e
 
 CCA_preparation.py: For each type of features from training dataset, It respectively save matching and non-matching coefficients as "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", and canoncial vectors as "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py".
 
-LDA_preparation.py:For each type of features from training dataset, It respectively save between-class scatter matrix as "max_Sb.py","ave_Sb.py","std_Sb.py", and within-class scatter matrix as "max_Sw.py","ave_Sw.py","std_Sw.py".
+LDA_preparation.py: For each type of features from training dataset, It respectively save between-class scatter matrix as "max_Sb.py","ave_Sb.py","std_Sb.py", and within-class scatter matrix as "max_Sw.py","ave_Sw.py","std_Sw.py".
