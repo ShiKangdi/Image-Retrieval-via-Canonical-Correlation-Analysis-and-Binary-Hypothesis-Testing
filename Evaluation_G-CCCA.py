@@ -130,8 +130,8 @@ if __name__ == '__main__':
             S_Transformed = np.reshape(S_Transformed,(1,n_comp))
             S_B = np.sqrt(np.sum(S_Transformed**2))
             S_norm_B = S_Transformed/S_B
-            Transformed_Ave = np.nan_to_num(S_norm_B)   
-            All_S_Transformed.append(S_Transformed)
+            S_norm_B = np.nan_to_num(S_norm_B)   
+            All_S_Transformed.append(S_norm_B)
             
         
         Query = All_S_Transformed[:55]
