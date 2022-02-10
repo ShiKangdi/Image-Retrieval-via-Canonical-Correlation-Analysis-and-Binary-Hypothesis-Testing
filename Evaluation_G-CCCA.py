@@ -106,7 +106,6 @@ if __name__ == '__main__':
         Individual = Ind[:,1]
         
         L = len(Ind)
-        #Ind = np.reshape(Ind,(1,L))
     
         Ave = Ave_Rshape_p5
         Max = Max_Rshape_p5
@@ -123,7 +122,6 @@ if __name__ == '__main__':
             Transformed_Ave = np.reshape(Transformed_Ave,(1,512))
             Transformed_Std = np.dot(np.transpose(Std_MEV),np.dot(Std_AA_1_2 ,Std[mm]))
             Transformed_Std = np.reshape(Transformed_Std,(1,512))
-
 
             Transformed = np.concatenate((Transformed_Max, Transformed_Ave,Transformed_Std), axis=0)
             S_Transformed = Transformed[Channel,Individual] 
