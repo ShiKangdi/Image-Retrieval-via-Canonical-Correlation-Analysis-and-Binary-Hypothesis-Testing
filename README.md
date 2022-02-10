@@ -11,23 +11,25 @@ Test_Data_preparation.py: For feature extraction on training dataset, it saves e
 
 Step 2:
 
-CCA_preparation.py: For each type of features from training dataset, It respectively save matching and non-matching coefficients as "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", and canoncial vectors as "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py". Besides, it saves the training data as "Max_Reshape.npy","Ave_Reshape.npy","Std_Reshape.npy" after centralized and normalization.
+CCA_preparation.py: For each type of features from training dataset, It respectively save matching and non-matching coefficients as "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", canoncial vectors as "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py", and the auto-correction matrix as "Max_Result.npy", "Ave_Result.npy", "Std_Result.npy". Besides, it saves the training data as "Max_Reshape.npy","Ave_Reshape.npy","Std_Reshape.npy" after centralized and normalization. 
 
-LDA_preparation.py: For each type of features from training dataset, It respectively save between-class scatter matrix as "max_Sb.py","ave_Sb.py","std_Sb.py", and within-class scatter matrix as "max_Sw.py","ave_Sw.py","std_Sw.py". It needs the feature means before and after centralization and normalization. These files can be obtained from "CCA_preparation.py" and "Training_Data_preparation.py".
+LDA_preparation.py: For each type of features from training dataset, It respectively save between-class scatter matrix as "max_Sb.py","ave_Sb.py","std_Sb.py", and within-class scatter matrix as "max_Sw.py","ave_Sw.py","std_Sw.py". It needs the feature means ("Max_ResultM.npy","Ave_ResultM.npy","Std_ResultM.npy") before centralization and normalization as inputs, and feature means after centralization and normalization that is calculated based on associated features ("Max_Reshape.npy","Ave_Reshape.npy","Std_Reshape.npy"). These files can be obtained from the output "CCA_preparation.py" and "Training_Data_preparation.py".
 
-SPCAMatrix.py: It generated the Laplacian matrix 'Laplcianmatrix.npy' used for SPCA. The order of labels is based on matching pairs.
+SPCAMatrix.py: It generated the Laplacian matrix 'Laplcianmatrix.npy' used for Supervised PCA. The order of labels is based on generated matching pairs in "GeneratePairs.py".
 
 Step 3:
 
-Evaluation_LDA.py: It evaluates the image retrieval performance of LDA. It needs between-class scatter matrix("max_Sb.py","ave_Sb.py","std_Sb.py") and within-class scatter matrix("max_Sw.py","ave_Sw.py","std_Sw.py") from the outputs of LDA_preparation.py. The input file "Eva_NameList.npy" which can be obtained from the output of "Test_Data_preparation.py", and it contains the name of each test data which is used for generating the retrieval results in txt format. 
+Evaluation_LDA.py: It evaluates the image retrieval performance of LDA. It needs between-class scatter matrix("max_Sb.py","ave_Sb.py","std_Sb.py") and within-class scatter matrix("max_Sw.py","ave_Sw.py","std_Sw.py") from the outputs of LDA_preparation.py. The input file "Eva_NameList.npy" which can be obtained from the output of "Test_Data_preparation.py", and it contains the name of each test data which is used to generate the retrieval results in txt format. 
 
-Evaluation_PCA.py: It evaluates the image retrieval performance of PCA. It needs the centralized and normalized features("Max_Reshape.npy","Ave_Reshape.npy","Std_Reshape.npy") from training set as inputs.  "Eva_NameList.npy" is also needed to generating the retrieval results in txt format.
+Evaluation_PCA.py: It evaluates the image retrieval performance of PCA. It needs the centralized and normalized features("Max_Reshape.npy","Ave_Reshape.npy","Std_Reshape.npy") from training set as inputs.  Besides, the "Eva_NameList.npy" is used to generate the retrieval results in txt format.
 
-Evaluation_SPCA.py: It evaluates the image retrieval performance of SPCA. It needs the centralized and normalized features("Max_Reshape.npy","Ave_Reshape.npy","Std_Reshape.npy") from training set as inputs, and Laplacian matrix "SPCAMatrix.py". "Eva_NameList.npy" is also needed to generating the retrieval results in txt format.
+Evaluation_SPCA.py: It evaluates the image retrieval performance of SPCA. It needs the centralized and normalized features("Max_Reshape.npy","Ave_Reshape.npy","Std_Reshape.npy") from training set as inputs, and Laplacian matrix "SPCAMatrix.py". Besides, the "Eva_NameList.npy" is used to generating the retrieval results in txt format.
 
-Evaluation_G-CCA.py: It evaluates the image retrieval performance of G-CCA. It needs matching and non-matching coefficients "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", and canoncial vectors "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py" from training set as inputs. "Eva_NameList.npy" is also needed to generating the retrieval results in txt format.
+Evaluation_G-CCA.py: It evaluates the image retrieval performance of G-CCA. It needs matching and non-matching coefficients "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", canoncial vectors "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py" and auto-correlation matrix "Max_Result.npy", "Ave_Result.npy", "Std_Result.npy" from training set as inputs.  Besides, the "Eva_NameList.npy" is used to generate the retrieval results in txt format.
 
 Evaluation_S-CCA.py: It evaluates the image retrieval performance of S-CCA. It needs matching and non-matching coefficients "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", and canoncial vectors "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py" from training set as inputs. "Eva_NameList.npy" is also needed to generating the retrieval results in txt format.
+
+Evaluation_G-CCCA.py: It evaluates the image retrieval performance of G-CCCA. It needs matching and non-matching coefficients "Max_Cm.py", "Ave_Cn.py", "Std_Cm.py", "Ave_Cn.py", "Ave_Cm.py", "Std_Cn.py", canoncial vectors "Max_MEV.py", "Ave_MEV.py", "Std_MEV.py" and auto-correlation matrix "Max_Result.npy", "Ave_Result.npy", "Std_Result.npy" from training set as inputs. "Eva_NameList.npy" is used to generate the retrieval results in txt format.
 
 gnd_oxford5k.mat, gnd_paris6k.mat, gnd_roxford5k.mat, gnd_rparis6k.mat: Mat files for calculating Map.
 
