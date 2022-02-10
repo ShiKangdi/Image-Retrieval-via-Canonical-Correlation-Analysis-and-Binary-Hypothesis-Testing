@@ -1,11 +1,8 @@
 import numpy as np
-from scipy.misc import imread, imresize
 import os
 import scipy.linalg 
-from sympy import Symbol
 from numpy.linalg import inv,det
 import math as m
-from numpy.linalg import inv,eig
 
 METHOD = 'Max'
 Ave_Sb = np.load(METHOD + '_Sb.npy')
