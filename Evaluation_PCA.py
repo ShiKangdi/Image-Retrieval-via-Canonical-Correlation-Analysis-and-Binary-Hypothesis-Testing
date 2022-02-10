@@ -1,5 +1,4 @@
 import numpy as np
-from scipy.misc import imread, imresize
 import os
 import scipy.linalg 
 from sympy import Symbol
@@ -22,9 +21,6 @@ TrEigvec = Eigvec[:,EigvecInd]
 
        
 if __name__ == '__main__':
-    print('Evaluation_2')
-    
- 
     Ave_Rshape_p5 = np.load('Eva_'+ METHOD +'_Rshape_p5.npy')
     NameList = np.load('Eva_NameList.npy')
     
