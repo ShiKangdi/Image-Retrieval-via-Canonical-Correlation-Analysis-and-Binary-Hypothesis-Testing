@@ -6,7 +6,6 @@ np.set_printoptions(precision=8)
 
             
 if __name__ == '__main__':
-    print('1stCCA_1')
     FILEA = 'D:/Landmarks/Matching/PairA'
     FILEB = 'D:/Landmarks/Matching/PairB'
     A = os.listdir(FILEA)
@@ -14,7 +13,6 @@ if __name__ == '__main__':
    
     label_A = []    
     label_B = []            
-    Channel = range(512)
     for i in range(len(A)):
         print(i)
         FolderA = A[i]
