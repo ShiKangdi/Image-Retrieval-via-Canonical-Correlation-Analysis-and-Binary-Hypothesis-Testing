@@ -211,7 +211,6 @@ if __name__ == '__main__':
     sess = tf.Session()
     imgs = tf.placeholder(tf.float32)
     vgg = vgg16(imgs, 'vgg16_weights.npz', sess)  
-    print('1stCCA_1')
     FILEA = 'D:/LM120K/Matching/PairA' # Your dictionary for One side of Matching pairs
     FILEB = 'D:/LM120K/Matching/PairB' # Your dictionary for Another side of Matching pairs
     FILEB_N = 'D:/LM120K/NonMatching/PairB' # Your dictionary for Another side of Non-Matching pairs
