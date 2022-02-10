@@ -5,20 +5,20 @@ import numpy.matlib
 import cv2
 np.set_printoptions(precision=8)
 
-Max_Rshape = np.load('Max_Rshape.npy')
-Ave_Rshape = np.load('Ave_Rshape.npy')
-Std_Rshape = np.load('Std_Rshape.npy')
+Max_Rshape = np.load('Max_Rshape.npy') # Features from Max pooling after Centralization and Normalization
+Ave_Rshape = np.load('Ave_Rshape.npy') # Features from Ave pooling after Centralization and Normalization
+Std_Rshape = np.load('Std_Rshape.npy') # Features from Std pooling after Centralization and Normalization
 
-Max_ResultM = np.mean(Max_Rshape,axis = 0)
+Max_ResultM = np.mean(Max_Rshape,axis = 0) 
 Ave_ResultM = np.mean(Ave_Rshape,axis = 0)
 Std_ResultM = np.mean(Std_Rshape,axis = 0)
 
-Max_mean = np.load('Max_ResultM.npy')
+Max_mean = np.load('Max_ResultM.npy') # Mean of features from Max pooling before Centralization
 Max_mean = np.reshape(Max_mean,(512,1))
-Ave_mean = np.load('Ave_ResultM.npy')
-Ave_mean = np.reshape(Ave_mean,(512,1))
-Std_mean = np.load('Std_ResultM.npy')
-Std_mean = np.reshape(Std_mean,(512,1))
+Ave_mean = np.load('Ave_ResultM.npy') # Mean of features from Ave pooling before Centralization
+Ave_mean = np.reshape(Ave_mean,(512,1)) 
+Std_mean = np.load('Std_ResultM.npy') # Mean of features from Std pooling before Centralization
+Std_mean = np.reshape(Std_mean,(512,1)) 
 
 class vgg16:
     def __init__(self, imgs, weights=None, sess=None):
