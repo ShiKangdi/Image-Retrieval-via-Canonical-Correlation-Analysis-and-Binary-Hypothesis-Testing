@@ -16,6 +16,6 @@ for n = 1:length(dim)
         end
     end
     [oldmap, newmap, ns, aps] = compute_map_r(ranks, gnd);
-    fprintf(strcat(a,b,c, string(dim(n)),'/', string(newaps)))
+    fprintf(strcat(Folder, string(dim(n)),'/', string(newaps)))
     fprintf('\n')
 end
