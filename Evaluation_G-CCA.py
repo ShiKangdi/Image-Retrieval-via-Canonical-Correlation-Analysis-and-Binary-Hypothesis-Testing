@@ -112,8 +112,8 @@ if __name__ == '__main__':
                     B = (CV_X**2) + (CV_Y**2) - 2*CV_X*CV_Y*CN   
                     C = np.sqrt((1-(CM**2))
                     D = np.sqrt((1-(CN**2))
-                    E = m.log(D/C)
-                    F = -(A/C) + (B/D) + E
+                   # E = m.log(D/C)
+                    F = -(A/C) + (B/D) #+ E
                           
                     P = P + F 
                     
