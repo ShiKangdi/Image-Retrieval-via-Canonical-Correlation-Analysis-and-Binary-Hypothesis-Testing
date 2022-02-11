@@ -61,9 +61,9 @@ if __name__ == '__main__':
                 P = np.dot(np.transpose(Xi),Yi)                       
                 dic[All_Name[k][:-4]] = P
             b = sorted(dic.items(), key=lambda d: d[1],reverse=True)
-            if not os.path.exists("D:/2022/3W/Oxford/SPCA_3/" + METHOD  + str(n_comp)):
-                os.makedirs("D:/2022/3W/Oxford/SPCA_3/" + METHOD  + str(n_comp))            
-            text_file = open("D:/2022/3W/Oxford/SPCA_3/" + METHOD  + str(n_comp) + "/Query"+str(q)+ ".txt","w")
+            if not os.path.exists("./Test_results/Oxford/SPCA/" + METHOD  + str(n_comp)):
+                os.makedirs("./Test_results/Oxford/SPCA/" + METHOD  + str(n_comp))            
+            text_file = open("./Test_results/Oxford/SPCA/" + METHOD  + str(n_comp) + "/Query"+str(q)+ ".txt","w")
             for t in range(len(b)):
                 text_file.write(b[t][0] + '\n')
             text_file.close()
