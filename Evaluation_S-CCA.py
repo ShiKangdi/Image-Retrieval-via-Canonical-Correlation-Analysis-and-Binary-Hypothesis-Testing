@@ -101,9 +101,9 @@ if __name__ == '__main__':
             X = Query[q]
             for k in range(O):
                 Y = All[k]
-                Xi = np.reshape(X,(1,L))
-                Yi = np.reshape(Y,(L,1)) 
-                R =  np.dot(Xi,Yi)                    
+                Xi = np.reshape(X,(n_comp,1))
+                Yi = np.reshape(Y,(n_comp,1))          
+                P = np.dot(np.transpose(Xi),Yi)               
                 dic[All_Name[k][:-4]] = R
             b = sorted(dic.items(), key=lambda d: d[1],reverse=True)
             if not os.path.exists("./Test_results/Oxford/S-CCA/" + METHOD + '_N'  + str(n_comp)):
