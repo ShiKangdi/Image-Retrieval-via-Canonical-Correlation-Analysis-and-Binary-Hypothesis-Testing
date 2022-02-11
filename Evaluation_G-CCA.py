@@ -119,9 +119,9 @@ if __name__ == '__main__':
                     
                 dic[All_Name[k][:-4]] = P
             b = sorted(dic.items(), key=lambda d: d[1],reverse=True)
-            if not os.path.exists("./Test_results/Oxford/G-CCA" + METHOD + str(n_comp)):
-                os.makedirs("./Test_results/Oxford/G-CCA" + METHOD + str(n_comp))            
-            text_file = open("./Test_results/Oxford/G-CCA" + METHOD + str(n_comp) + "/Query"+str(q)+ ".txt","w")
+            if not os.path.exists("./Test_results/Oxford/G-CCA/" + METHOD + str(n_comp)):
+                os.makedirs("./Test_results/Oxford/G-CCA/" + METHOD + str(n_comp))            
+            text_file = open("./Test_results/Oxford/G-CCA/" + METHOD + str(n_comp) + "/Query"+str(q)+ ".txt","w")
             for t in range(len(b)):
                 text_file.write(b[t][0] + '\n')
             text_file.close()
