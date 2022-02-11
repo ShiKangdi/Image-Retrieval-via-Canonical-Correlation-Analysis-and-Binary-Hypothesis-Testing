@@ -1,6 +1,5 @@
 import tensorflow as tf
 import numpy as np
-from scipy.misc import imread, imresize
 import os
 import cv2
 np.set_printoptions(precision=8)
@@ -257,6 +256,8 @@ if __name__ == '__main__':
     for kk in range(len(All_Query)):
         QFile = All_Query[kk]    
         Qimg = imread(QueryFolder +'/' + QFile , mode='RGB')
+        Qimg = cv2.imread(QueryFolder +'/' + QFile)
+        Qimg = Qimg[:,:,::-1]
         QP5 = sess.run(vgg.pool5, feed_dict={vgg.imgs: [Qimg]})[0]
         QP5 = np.float64(QP5)
         QP5 = np.reshape(QP5,(np.shape(QP5)[0]*np.shape(QP5)[1],512))
@@ -287,9 +288,8 @@ if __name__ == '__main__':
   
     for i in range(len(os.listdir(AllFolder))):
         File = os.listdir(AllFolder)[i]    
-        img = imread(AllFolder +'/' + File , mode='RGB')
-        if max(np.shape(img))>1024:
-            img = imresize(img, ((1024/max(np.shape(img)))*np.shape(img)[0], (1024/max(np.shape(img)))*np.shape(img)[1]))
+        img = cv2.imread(AllFolder +'/' + File)
+        img = img[:,:,::-1]
         P5 = sess.run(vgg.pool5, feed_dict={vgg.imgs: [img]})[0]
         P5 = np.float64(P5)
         P5 = np.reshape(P5,(np.shape(P5)[0]*np.shape(P5)[1],512))
