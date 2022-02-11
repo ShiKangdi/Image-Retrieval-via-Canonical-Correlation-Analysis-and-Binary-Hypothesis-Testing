@@ -1,7 +1,6 @@
 import numpy as np
 import os
 import scipy.linalg 
-from sympy import Symbol
 from numpy.linalg import inv,det
 import math as m
 from numpy.linalg import eig
@@ -35,7 +34,6 @@ if __name__ == '__main__':
         All_S_Transformed = []
         PCA = np.dot(np.diag(1/np.sqrt(TrEigval[:n_comp])),np.transpose(TrEigvec[:,:n_comp]))
         for mm in range(len(Ave_Rshape_p5)):
-            print(mm)
             Max_DPB = np.dot(PCA,Ave_Rshape_p5[mm])
             Max_DPB = np.nan_to_num(Max_DPB)
             Max_S_B = np.sqrt(np.sum(Max_DPB**2))
