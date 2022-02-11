@@ -255,7 +255,6 @@ if __name__ == '__main__':
     std_ResultB_P5 = []
     
     for kk in range(len(All_Query)):
-        print(kk)
         QFile = All_Query[kk]    
         Qimg = imread(QueryFolder +'/' + QFile , mode='RGB')
         QP5 = sess.run(vgg.pool5, feed_dict={vgg.imgs: [Qimg]})[0]
@@ -287,7 +286,6 @@ if __name__ == '__main__':
         NameList.append(QFile)
   
     for i in range(len(os.listdir(AllFolder))):
-        print(i)
         File = os.listdir(AllFolder)[i]    
         img = imread(AllFolder +'/' + File , mode='RGB')
         if max(np.shape(img))>1024:
