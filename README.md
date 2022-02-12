@@ -38,7 +38,7 @@ gnd_oxford5k.mat, gnd_paris6k.mat, gnd_roxford5k.mat, gnd_rparis6k.mat: Mat file
 
 score_ap_from_ranks.m: This file calculates the average precision for each query image.
 
-compute_map_r.m: This file calculate the Map for all query image
+compute_map_r.m: This file calculate the Map based on retrieval results of all query images.
 
 test_Map.m: It tests the Map based on the retrieval results in txt format. "gnd_oxford5k.mat","gnd_paris6k.mat","gnd_roxford5k.mat","gnd_rparis6k.mat", and "score_ap_from_ranks.m" are used in this file.
 
