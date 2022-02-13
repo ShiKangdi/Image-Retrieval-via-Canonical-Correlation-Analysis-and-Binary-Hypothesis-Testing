@@ -3,7 +3,7 @@ load('gnd_oxford5k.mat')
 %load('gnd_paris6k.mat')
 %load('gnd_oxford5k.mat')
 
-Folder = '' % Place Your Folder address in here. The folder stores the results in txt format. The name of each .txt file is "query0.txt","query1.txt","query2.txt"....
+Folder = '' % Place Your Folder address in here. The folder stores the results in txt format. The sub foldername is "Max512", "Max450".... The name of each .txt file in the subfolder is "query0.txt","query1.txt","query2.txt"....
 dim = [512,450,400,300,200,100,50,25];
 for n = 1:length(dim)
     for m = 0:54
