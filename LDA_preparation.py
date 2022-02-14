@@ -13,11 +13,11 @@ Max_ResultM = np.mean(Max_Rshape,axis = 0)
 Ave_ResultM = np.mean(Ave_Rshape,axis = 0)
 Std_ResultM = np.mean(Std_Rshape,axis = 0)
 
-Max_mean = np.load('Max_ResultM.npy') # Mean of features from Max pooling before Centralization
+Max_mean = np.load('Max_ResultM.npy') # Mean of features from Max pooling before Centralization and Normalization 
 Max_mean = np.reshape(Max_mean,(512,1))
-Ave_mean = np.load('Ave_ResultM.npy') # Mean of features from Ave pooling before Centralization
+Ave_mean = np.load('Ave_ResultM.npy') # Mean of features from Ave pooling before Centralization and Normalization 
 Ave_mean = np.reshape(Ave_mean,(512,1)) 
-Std_mean = np.load('Std_ResultM.npy') # Mean of features from Std pooling before Centralization
+Std_mean = np.load('Std_ResultM.npy') # Mean of features from Std pooling before Centralization and Normalization 
 Std_mean = np.reshape(Std_mean,(512,1)) 
 
 class vgg16:
